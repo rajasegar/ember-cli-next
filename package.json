@@ -3,6 +3,10 @@
   "version": "0.0.0",
   "description": "Next generation CLI for ember",
   "main": "index.js",
+  "bin": {
+    "ember-cli-next": "bin/cli.js",
+    "ecn": "bin/cli.js"
+  },
   "repository": {
     "type": "git",
     "url": "https://github.com/rajasegar/ember-cli-next"
@@ -10,9 +14,31 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "deploy": "git push && git push --tags && npm publish"
-
   },
-  "keywords": ["cli", "terminal", "ember", "emberjs","ember-cli","blessed","blessed-contrib"],
+  "keywords": [
+    "cli",
+    "terminal",
+    "ember",
+    "emberjs",
+    "ember-cli",
+    "blessed",
+    "blessed-contrib"
+  ],
   "author": "Rajasegar Chandran <rajasegar.c@gmail.com>",
-  "license": "MIT"
+  "license": "MIT",
+  "dependencies": {
+    "blessed": "^0.1.81",
+    "blessed-contrib": "^4.8.20",
+    "execa": "^4.0.3"
+  },
+  "devDependencies": {
+    "@semantic-release/changelog": "^5.0.1",
+    "@semantic-release/git": "^9.0.0",
+    "eslint": "^7.5.0",
+    "eslint-config-prettier": "^6.11.0",
+    "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-prettier": "^3.1.4",
+    "prettier": "^2.0.5",
+    "semantic-release": "^17.1.1"
+  }
 }
