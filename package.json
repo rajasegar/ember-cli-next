@@ -1,0 +1,14 @@
+{
+  "name": "ember-cli-next",
+  "version": "0.0.0",
+  "description": "Next generation CLI user interface for ember-cli",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "deploy": "git push && git push --tags && npm publish"
+
+  },
+  "keywords": [],
+  "author": "Rajasegar Chandran <rajasegar.c@gmail.com>",
+  "license": "MIT"
+}
