@@ -4,8 +4,8 @@
   "description": "Next generation CLI for ember",
   "main": "index.js",
   repository: {
-    type: "git",
-    url: "https://github.com/rajasegar/ember-cli-next"
+    "type": "git",
+    "url": "https://github.com/rajasegar/ember-cli-next"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
