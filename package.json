@@ -30,6 +30,8 @@
     "blessed": "^0.1.81",
     "blessed-contrib": "^4.8.20",
     "execa": "^4.0.3",
+    "neo-blessed": "github:danikaze/neo-blessed",
+    "node-pty": "^0.9.0",
     "pidusage": "^2.0.21"
   },
   "devDependencies": {
