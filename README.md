@@ -6,7 +6,7 @@ Next generation CLI user interface for ember-cli based on [blessed](https://gith
 npm install -g ember-cli-next
 ```
 
-## Usgae
+## Usage
 ```
 ember-next
 ```

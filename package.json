@@ -5,6 +5,7 @@
   "main": "index.js",
   "bin": {
     "ember-cli-next": "bin/cli.js",
+    "ember-next": "bin/cli.js",
     "ecn": "bin/cli.js"
   },
   "repository": {
@@ -29,7 +30,6 @@
   "dependencies": {
     "blessed": "^0.1.81",
     "blessed-contrib": "^4.8.20",
-    "execa": "^4.0.3",
     "node-pty": "^0.9.0",
     "pidusage": "^2.0.21",
     "term.js": "^0.0.7"

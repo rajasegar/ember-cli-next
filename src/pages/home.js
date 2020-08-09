@@ -80,7 +80,7 @@ module.exports = function (screen) {
   });
 
   screen.key(['v'], function () {
-    terminal.pty.write('ember version\r');
+    terminal.pty.write('ember version --verbose\r\n');
   });
 
   screen.key(['i'], function () {

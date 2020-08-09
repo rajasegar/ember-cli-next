@@ -2,6 +2,7 @@ const blessed = require('blessed');
 const contrib = require('blessed-contrib');
 const Terminal = require('./terminal');
 const fs = require('fs');
+const listStyle = require('../styles/list');
 
 module.exports = function (screen) {
   const grid = new contrib.grid({ rows: 12, cols: 12, screen: screen });
@@ -22,18 +23,6 @@ module.exports = function (screen) {
   let pacman = 'npm';
   if (fs.existsSync(`${root}/yarn.lock`)) pacman = 'yarn';
   if (fs.existsSync(`${root}/pnpm-lock.yaml`)) pacman = 'pnpm';
-
-  const style = {
-    fg: 'yellow',
-    focus: {
-      border: {
-        fg: 'white',
-      },
-    },
-    selected: {
-      bg: 'blue',
-    },
-  };
 
   const projDetails = [];
 
@@ -76,10 +65,10 @@ module.exports = function (screen) {
 
   const taskListWidget = grid.set(4, 0, 4, 6, blessed.list, {
     parent: screen,
-    label: 'Tasks',
+    label: 'Project Tasks',
     keys: true,
     vi: true,
-    style,
+    style: listStyle,
   });
 
   const tasks = Object.keys(packageManifest.scripts);
