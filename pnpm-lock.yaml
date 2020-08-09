@@ -2,9 +2,9 @@ dependencies:
   blessed: 0.1.81
   blessed-contrib: 4.8.20
   execa: 4.0.3
-  neo-blessed: github.com/danikaze/neo-blessed/b4620026a511933bdfb06e83ce009ba0d719f100
   node-pty: 0.9.0
   pidusage: 2.0.21
+  term.js: 0.0.7
 devDependencies:
   '@semantic-release/changelog': 5.0.1_semantic-release@17.1.1
   '@semantic-release/git': 9.0.0_semantic-release@17.1.1
@@ -3144,19 +3144,6 @@ packages:
       node: '>=8'
     resolution:
       integrity: sha512-aePbxDmcYW++PaqBsJ+HYUFwCdv4LVvdnhBy78E57PIor8/OVvhMrADFFEDh8DHDFRv/O9i3lPhsENjO7QX0+A==
-  github.com/danikaze/neo-blessed/b4620026a511933bdfb06e83ce009ba0d719f100:
-    dependencies:
-      node-pty: 0.9.0
-      term.js: 0.0.7
-    dev: false
-    engines:
-      node: '>= 8.0.0'
-    hasBin: true
-    name: neo-blessed
-    resolution:
-      registry: 'https://registry.npmjs.org/'
-      tarball: 'https://codeload.github.com/danikaze/neo-blessed/tar.gz/b4620026a511933bdfb06e83ce009ba0d719f100'
-    version: 0.2.0
 specifiers:
   '@semantic-release/changelog': ^5.0.1
   '@semantic-release/git': ^9.0.0
@@ -3167,8 +3154,8 @@ specifiers:
   eslint-plugin-node: ^11.1.0
   eslint-plugin-prettier: ^3.1.4
   execa: ^4.0.3
-  neo-blessed: 'github:danikaze/neo-blessed'
   node-pty: ^0.9.0
   pidusage: ^2.0.21
   prettier: ^2.0.5
   semantic-release: ^17.1.1
+  term.js: ^0.0.7

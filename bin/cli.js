@@ -2,5 +2,5 @@
 
 'use strict';
 
-const screen = require('../index');
-screen.render();
+const app = require('../index');
+app.start();

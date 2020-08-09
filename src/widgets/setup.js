@@ -1,5 +1,6 @@
+const blessed = require('blessed');
 const contrib = require('blessed-contrib');
-const blessed = require('neo-blessed');
+const Terminal = require('./terminal');
 const fs = require('fs');
 
 module.exports = function (screen) {
@@ -45,7 +46,10 @@ module.exports = function (screen) {
   projDetails.push(['private', packageManifest.private]);
   projDetails.push(['LICENSE', packageManifest.license]);
   projDetails.push(['ember-cli', emberCliVersion]);
-  projDetails.push(['Ember edition', packageManifest.ember.edition || '']);
+  projDetails.push([
+    'Ember edition',
+    (packageManifest.ember && packageManifest.ember.edition) || '',
+  ]);
   projDetails.push([
     'devDependencies',
     Object.keys(packageManifest.devDependencies).length,
@@ -105,10 +109,11 @@ module.exports = function (screen) {
     wholeNumbersOnly: false, //true=do not show fraction in y axis
   });
 
-  const terminal = grid.set(0, 6, 12, 6, blessed.terminal, {
+  const terminal = grid.set(0, 6, 12, 6, Terminal, {
     parent: screen,
     label: 'Log',
     fullUnicode: true,
+    screenKeys: false,
   });
 
   return {
