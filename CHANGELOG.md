@@ -1,3 +1,10 @@
+# [0.7.0](https://github.com/rajasegar/ember-cli-next/compare/v0.6.0...v0.7.0) (2020-08-10)
+
+
+### Features
+
+* add more hot keys to menu bar ([f863c35](https://github.com/rajasegar/ember-cli-next/commit/f863c356654c396f5f5d405e555d08954a7f2539))
+
 # [0.6.0](https://github.com/rajasegar/ember-cli-next/compare/v0.5.0...v0.6.0) (2020-08-10)
 
 
