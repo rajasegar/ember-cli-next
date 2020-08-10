@@ -1,3 +1,10 @@
+# [0.6.0](https://github.com/rajasegar/ember-cli-next/compare/v0.5.0...v0.6.0) (2020-08-10)
+
+
+### Features
+
+* add lcd widget to credits page ([3aad01b](https://github.com/rajasegar/ember-cli-next/commit/3aad01b80846e677301b8540ecb3bd9d0368d805))
+
 # [0.5.0](https://github.com/rajasegar/ember-cli-next/compare/v0.4.0...v0.5.0) (2020-08-10)
 
 
