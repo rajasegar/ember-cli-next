@@ -1,8 +1,8 @@
 const blessed = require('blessed');
 const contrib = require('blessed-contrib');
-const Terminal = require('./terminal');
+const Terminal = require('../../widgets/terminal');
 const fs = require('fs');
-const listStyle = require('../styles/list');
+const listStyle = require('../../styles/list');
 
 module.exports = function (screen) {
   const grid = new contrib.grid({ rows: 12, cols: 12, screen: screen });
@@ -54,7 +54,7 @@ module.exports = function (screen) {
   projDetails.push(['Github', gitRepo]);
 
   const projWidget = grid.set(0, 0, 4, 6, contrib.table, {
-    label: packageManifest.name,
+    label: `Project Name: ${packageManifest.name}`,
     selectedBg: 'black',
     columnWidth: [15, 50],
     columnSpacing: 3,
@@ -80,37 +80,92 @@ module.exports = function (screen) {
     terminal.pty.write(`npm run ${content}\r`);
   });
 
-  const memoryWidget = grid.set(8, 0, 4, 3, contrib.line, {
-    label: 'Memory Usage in KB',
-    style: { line: 'yellow', text: 'green', baseline: 'black' },
-    xLabelPadding: 3,
-    xPadding: 5,
-    showLegend: true,
-    wholeNumbersOnly: false, //true=do not show fraction in y axis
+  const intro = `
+    ember-cli-next is a next-generation cli for Ember.js where you can run 
+    your ember-cli commands and project tasks within one single unified terminal window.
+    Use your ←/→ arrows to navigate to different pages.
+    Use ? to know more about keyboard shortcuts.
+    You can also use the menu bar at the bottom of the screen to run different tasks.
+    More info at https://github.com/rajasegar/ember-cli-next
+    `;
+
+  grid.set(8, 0, 3, 6, blessed.box, {
+    parent: screen,
+    label: 'About ember-cli-next',
+    content: intro,
+    style: {
+      fg: 'yellow',
+    },
   });
 
-  const cpuWidget = grid.set(8, 3, 4, 3, contrib.line, {
-    label: 'CPU Usage',
-    style: { line: 'yellow', text: 'green', baseline: 'black' },
-    xLabelPadding: 3,
-    xPadding: 5,
-    showLegend: true,
-    wholeNumbersOnly: false, //true=do not show fraction in y axis
-  });
-
-  const terminal = grid.set(0, 6, 12, 6, Terminal, {
+  const terminal = grid.set(0, 6, 11, 6, Terminal, {
     parent: screen,
     label: 'Log',
     fullUnicode: true,
     screenKeys: false,
   });
 
+  const auto = true;
+  const bar = grid.set(11, 0, 1, 12, blessed.listbar, {
+    parent: screen,
+    bottom: 0,
+    left: 3,
+    right: 3,
+    height: auto ? 'shrink' : 3,
+    mouse: true,
+    keys: true,
+    autoCommandKeys: true,
+    border: 'line',
+    vi: true,
+    style: {
+      item: {
+        hover: {
+          bg: 'blue',
+        },
+      },
+      selected: {
+        bg: 'blue',
+      },
+    },
+    commands: {
+      start: {
+        keys: ['s'],
+        callback: function () {
+          screen.render();
+        },
+      },
+      stop: {
+        keys: ['x'],
+        callback: function () {
+          screen.render();
+        },
+      },
+      build: {
+        keys: ['b'],
+        callback: function () {
+          screen.render();
+        },
+      },
+      install: {
+        keys: ['i'],
+        callback: function () {
+          screen.render();
+        },
+      },
+      help: {
+        keys: ['?'],
+        callback: function () {
+          screen.render();
+        },
+      },
+    },
+  });
+
   return {
     grid,
-    memoryWidget,
-    cpuWidget,
     projWidget,
     terminal,
     taskListWidget,
+    bar,
   };
 };

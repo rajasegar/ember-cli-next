@@ -1,6 +1,6 @@
 const blessed = require('blessed');
 const contrib = require('blessed-contrib');
-const screen = blessed.screen();
+const screen = blessed.screen({ smartCSR: true, warnings: true });
 
 const log = require('./src/utils/log');
 const pages = require('./src/utils/pages');

@@ -5,7 +5,7 @@ const pty = require('node-pty');
 //const pidusage = require('pidusage');
 const os = require('os');
 
-const setupWidgets = require('../widgets/setup');
+const setupWidgets = require('./setup');
 
 module.exports = function (screen) {
   const { taskListWidget, terminal } = setupWidgets(screen);
@@ -13,14 +13,7 @@ module.exports = function (screen) {
 
   const shell = os.platform() === 'win32' ? 'powershell.exe' : 'bash';
 
-  const ptyProcess = pty.spawn(shell, [], {
-    name: 'xterm-color',
-    cols: 80,
-    rows: 30,
-    cwd: process.cwd(),
-    env: process.env,
-  });
-
+  let ptyProcess = null;
   /*
   const interval = setInterval(function () {
     pidusage(ptyProcess.pid, function (err, stats) {
@@ -48,6 +41,13 @@ module.exports = function (screen) {
   });
 
   taskListWidget.key(['s'], function () {
+    ptyProcess = pty.spawn(shell, [], {
+      name: 'xterm-color',
+      cols: 80,
+      rows: 30,
+      cwd: process.cwd(),
+      env: process.env,
+    });
     ptyProcess.onData((data) => terminal.write(data));
     ptyProcess.write('npm start\r');
   });
@@ -55,8 +55,8 @@ module.exports = function (screen) {
   taskListWidget.key(['x'], function (/*ch, key*/) {
     //clearInterval(interval);
     ptyProcess.kill();
-    terminal.write('Server stopped');
-    terminal.pty.write('clear\r');
+    terminal.write('Server stopped\n');
+    terminal.pty.write('\r');
   });
 
   taskListWidget.key(['tab'], function () {
