@@ -2,34 +2,16 @@
 
 const blessed = require('blessed');
 const pty = require('node-pty');
-//const pidusage = require('pidusage');
 const os = require('os');
 
 const setupWidgets = require('./setup');
 
 module.exports = function (screen) {
   const { taskListWidget, terminal } = setupWidgets(screen);
-  //const { memorySeries, cpuSeries } = require('../widgets/data');
 
   const shell = os.platform() === 'win32' ? 'powershell.exe' : 'bash';
 
   let ptyProcess = null;
-  /*
-  const interval = setInterval(function () {
-    pidusage(ptyProcess.pid, function (err, stats) {
-      const _memorySeries = Object.assign({}, memorySeries);
-      _memorySeries.x.push(stats.timestamp);
-      _memorySeries.y.push(Math.round(stats.memory / 1024)); // Memory usage in KB
-      memoryWidget.setData([_memorySeries]);
-
-      const _cpuSeries = Object.assign({}, cpuSeries);
-      _cpuSeries.x.push(stats.timestamp);
-      _cpuSeries.y.push(stats.cpu);
-      cpuWidget.setData([_cpuSeries]);
-      screen.render();
-    });
-  }, 1000);
-  */
 
   const installPrompt = blessed.prompt({
     parent: screen,

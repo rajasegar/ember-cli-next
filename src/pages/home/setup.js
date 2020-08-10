@@ -128,7 +128,7 @@ module.exports = function (screen) {
       },
     },
     commands: {
-      start: {
+      serve: {
         keys: ['s'],
         callback: function () {
           screen.render();
@@ -152,8 +152,44 @@ module.exports = function (screen) {
           screen.render();
         },
       },
+      lint: {
+        keys: ['l'],
+        callback: function () {
+          screen.render();
+        },
+      },
+      test: {
+        keys: ['t'],
+        callback: function () {
+          screen.render();
+        },
+      },
+      generate: {
+        keys: ['g'],
+        callback: function () {
+          screen.render();
+        },
+      },
+      destroy: {
+        keys: ['d'],
+        callback: function () {
+          screen.render();
+        },
+      },
       help: {
         keys: ['?'],
+        callback: function () {
+          screen.render();
+        },
+      },
+      credits: {
+        keys: ['9'],
+        callback: function () {
+          screen.render();
+        },
+      },
+      quit: {
+        keys: ['C-q'],
         callback: function () {
           screen.render();
         },

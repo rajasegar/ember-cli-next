@@ -5,10 +5,11 @@ const contrib = require('blessed-contrib');
 
 module.exports = function (screen) {
   const grid = new contrib.grid({ rows: 12, cols: 12, screen: screen });
+  const pkginfo = require('../../package.json');
 
   grid.set(0, 0, 3, 12, blessed.bigtext, {
     parent: screen,
-    content: 'ember-cli-next',
+    content: 'ember-cli-next ' + pkginfo.version,
     width: '80%',
     height: 'shrink',
     border: 'line',
@@ -30,8 +31,11 @@ module.exports = function (screen) {
 
   let temp = '';
   let counter = 0;
+  function randomColor() {
+    return [Math.random() * 255, Math.random() * 255, Math.random() * 255];
+  }
+
   setInterval(function () {
-    const colors = ['green', 'magenta', 'cyan', 'red', 'blue'];
     const text = [
       'E',
       'M',
@@ -49,9 +53,6 @@ module.exports = function (screen) {
       'T',
     ];
 
-    const value = Math.round(Math.random() * 1000);
-    //lcd.setDisplay('EMBER-CLI-NEXT');
-
     temp = temp + text[counter++];
     if (counter > 14) {
       counter = 0;
@@ -59,7 +60,7 @@ module.exports = function (screen) {
     }
     lcd.setDisplay(temp);
     lcd.setOptions({
-      color: colors[value % 5],
+      color: randomColor(),
     });
     screen.render();
   }, 1000);

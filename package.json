@@ -32,7 +32,6 @@
     "blessed": "^0.1.81",
     "blessed-contrib": "^4.8.20",
     "node-pty": "^0.9.0",
-    "pidusage": "^2.0.21",
     "term.js": "^0.0.7"
   },
   "devDependencies": {

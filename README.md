@@ -59,3 +59,25 @@ ember-cli-next
     ['Go to Credits page', '9'],
 ```
 
+## FAQs
+
+### How do I quit this thing?
+You can press `Ctrl-q` to quit the program at any time.
+
+### How can I see the keyboard shortcuts for navigating?
+Press ? or ! to see the keyboard navigation shortcuts page.
+
+### How can I quickly navigate to home page screen?
+Press 0 to go to the home page.
+
+### How do I navigate between different pages of the cli?
+You can use the arrow keys to navigate between pages, Left Arrow to previous screen and Right Arrow to next screen.
+
+### Does it support vi/vim navigation keys in the lists?
+Yes. You can use j,k,gg,G,l and /
+
+## Known issues
+- Some times while navigating between different pages you might get Max Event Listeners exceeded error 
+- When you have focus in a terminal window, pressing the hot keys like `l,g,d` will take you to the respective pages instead of printing chars in the terminal.
+- The terminal windows cannot be paginated, which means you can't scroll up/down inside the terminal.
+- The program might crash if you are not inside an Ember project.
