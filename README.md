@@ -4,7 +4,7 @@
 [![npm version](http://img.shields.io/npm/v/ember-cli-next.svg?style=flat)](https://npmjs.org/package/ember-cli-next "View this project on npm")
 
 
-Next generation TUI (terminal user interface) for ember-cli based on [blessed](https://github.com/chjj/blessed) and [blessed-contrib](https://github.com/yaronn/blessed-contrib),   where you can run your ember-cli commands and project tasks within one single unified terminal window.
+Experimental Next generation TUI (terminal user interface) for ember-cli based on [blessed](https://github.com/chjj/blessed) and [blessed-contrib](https://github.com/yaronn/blessed-contrib),   where you can run your ember-cli commands and project tasks within one single unified terminal window.
 
 ## Install
 ```
@@ -15,6 +15,9 @@ npm install -g ember-cli-next
 ```
 ember-cli-next
 ```
+
+## Demo
+[ember-cli-next demo](https://www.youtube.com/watch?v=do9sRiOxenA)
 
 ## Screenshots
 
