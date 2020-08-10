@@ -76,6 +76,9 @@ You can use the arrow keys to navigate between pages, Left Arrow to previous scr
 ### Does it support vi/vim navigation keys in the lists?
 Yes. You can use j,k,gg,G,l and /
 
+### How do I select text inside any widget?
+Hold down `Shift` key and use your mouse to select text.
+
 ## Known issues
 - Some times while navigating between different pages you might get Max Event Listeners exceeded error 
 - When you have focus in a terminal window, pressing the hot keys like `l,g,d` will take you to the respective pages instead of printing chars in the terminal.

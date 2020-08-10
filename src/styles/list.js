@@ -3,6 +3,7 @@ module.exports = {
   fg: 'yellow',
   selected: {
     bg: 'blue',
+    fg: 'white',
   },
   focus: {
     border: {

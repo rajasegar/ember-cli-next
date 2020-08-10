@@ -35,7 +35,6 @@ module.exports = function (screen) {
   });
 
   taskListWidget.key(['x'], function (/*ch, key*/) {
-    //clearInterval(interval);
     ptyProcess.kill();
     terminal.write('Server stopped\n');
     terminal.pty.write('\r');

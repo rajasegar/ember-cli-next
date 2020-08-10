@@ -125,6 +125,7 @@ module.exports = function (screen) {
       },
       selected: {
         bg: 'blue',
+        fg: 'white',
       },
     },
     commands: {
