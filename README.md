@@ -1,6 +1,5 @@
 # ember-cli-next
 ![Build and Deploy](https://github.com/rajasegar/ember-cli-next/workflows/Build%20and%20Deploy/badge.svg)
-[![Coverage Status](https://coveralls.io/repos/github/rajasegar/ember-cli-next/badge.svg?branch=master)](https://coveralls.io/github/rajasegar/ember-cli-next?branch=master)
 [![semantic-release](https://img.shields.io/badge/%20%20%F0%9F%93%A6%F0%9F%9A%80-semantic--release-e10079.svg)](https://github.com/semantic-release/semantic-release)
 [![npm version](http://img.shields.io/npm/v/ember-cli-next.svg?style=flat)](https://npmjs.org/package/ember-cli-next "View this project on npm")
 
@@ -16,6 +15,23 @@ npm install -g ember-cli-next
 ```
 ember-cli-next
 ```
+
+## Screenshots
+
+### Home Page
+![home](screenshots/home.png)
+
+### Install Ember addons
+![ember-install](screenshots/ember-install.png)
+
+### Run Tests
+![ember-test](screenshots/ember-test.png)
+
+### Run tests with custom filters
+![custom-filter-test](screenshots/custom-filter-test.png)
+
+### Generate Blueprints
+![ember-generate](screenshots/ember-generate.png)
 
 ## Keyboard shortcuts
 ```
