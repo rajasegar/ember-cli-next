@@ -51,5 +51,11 @@ ember-cli-next
     ['Go to the end of any list', 'G'],
     ['Help', '? / !'],
     ['Navigate within a page', 'Tab'],
+    ['Go to Home page', '0'],
+    ['Go to Lint page', 'l'],
+    ['Go to Tests page', 't'],
+    ['Go to Generate page', 'g'],
+    ['Go to Destroy page', 'd'],
+    ['Go to Credits page', '9'],
 ```
 
