@@ -1,6 +1,6 @@
 {
   "name": "ember-cli-next",
-  "version": "0.3.1",
+  "version": "0.4.0",
   "description": "Next generation CLI for ember",
   "main": "index.js",
   "bin": {
