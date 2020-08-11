@@ -3,17 +3,20 @@
 const contrib = require('blessed-contrib');
 const pageList = require('../utils/pages');
 const capitalize = require('../utils/capitalize');
+const addMenuBar = require('../widgets/menuBar');
 
 module.exports = function (screen) {
   const grid = new contrib.grid({ rows: 12, cols: 12, screen: screen });
 
-  const helpWidget = grid.set(0, 0, 12, 12, contrib.table, {
+  const helpWidget = grid.set(0, 0, 11, 12, contrib.table, {
     label: 'Help: Keyboard Navigation',
     keys: true,
     vi: true,
-    style: { fg: 'yellow', bg: 'black' },
+    style: { fg: 'yellow' },
     columnWidth: [40, 40],
   });
+
+  addMenuBar(grid, screen);
 
   const helpKeys = [
     ['Next Page', 'Right Arrow'],

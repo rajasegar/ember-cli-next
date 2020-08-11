@@ -3,6 +3,7 @@ const lintPage = require('../pages/lint');
 const testPage = require('../pages/test');
 const generatePage = require('../pages/generate');
 const destroyPage = require('../pages/destroy');
+const installPage = require('../pages/install');
 const creditsPage = require('../pages/credits');
 
 const pages = [
@@ -11,6 +12,7 @@ const pages = [
   { name: 'test', page: testPage, keyCodes: ['t'] },
   { name: 'generate', page: generatePage, keyCodes: ['g'] },
   { name: 'destroy', page: destroyPage, keyCodes: ['d'] },
+  { name: 'install', page: installPage, keyCodes: ['i'] },
   { name: 'credits', page: creditsPage, keyCodes: ['9'] },
 ];
 

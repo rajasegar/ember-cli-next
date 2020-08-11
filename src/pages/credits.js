@@ -2,6 +2,7 @@
 
 const blessed = require('blessed');
 const contrib = require('blessed-contrib');
+const addMenuBar = require('../widgets/menuBar');
 
 module.exports = function (screen) {
   const grid = new contrib.grid({ rows: 12, cols: 12, screen: screen });
@@ -77,10 +78,12 @@ module.exports = function (screen) {
   - https://github.com/lirantal/dockly
   `;
 
-  grid.set(6, 0, 6, 12, blessed.box, {
+  grid.set(6, 0, 5, 12, blessed.box, {
     content: credits,
     label: 'Credits',
   });
+
+  addMenuBar(grid, screen);
 
   screen.render();
 };

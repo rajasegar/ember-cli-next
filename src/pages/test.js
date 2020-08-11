@@ -4,6 +4,7 @@ const blessed = require('blessed');
 const contrib = require('blessed-contrib');
 const listStyle = require('../styles/list');
 const Terminal = require('../widgets/terminal');
+const addMenuBar = require('../widgets/menuBar');
 
 module.exports = function (screen) {
   const grid = new contrib.grid({ rows: 12, cols: 12, screen: screen });
@@ -16,7 +17,7 @@ module.exports = function (screen) {
     'Custom Filter': '',
   };
 
-  const leftCol = grid.set(0, 0, 12, 2, blessed.list, {
+  const leftCol = grid.set(0, 0, 11, 2, blessed.list, {
     label: 'ember test',
     keys: true,
     vi: true,
@@ -49,11 +50,13 @@ module.exports = function (screen) {
     }
   });
 
-  const terminal = grid.set(0, 2, 12, 10, Terminal, {
+  const terminal = grid.set(0, 2, 11, 10, Terminal, {
     parent: screen,
     label: 'Log',
     fullUnicode: true,
   });
+
+  addMenuBar(grid, screen);
 
   leftCol.key(['tab'], () => {
     terminal.focus();

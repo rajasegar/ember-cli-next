@@ -1,6 +1,5 @@
 'use strict';
 
-const blessed = require('blessed');
 const pty = require('node-pty');
 const os = require('os');
 
@@ -12,15 +11,6 @@ module.exports = function (screen) {
   const shell = os.platform() === 'win32' ? 'powershell.exe' : 'bash';
 
   let ptyProcess = null;
-
-  const installPrompt = blessed.prompt({
-    parent: screen,
-    top: 'center',
-    left: 'center',
-    height: 'shrink',
-    width: 'shrink',
-    border: 'line',
-  });
 
   taskListWidget.key(['s'], function () {
     ptyProcess = pty.spawn(shell, [], {
@@ -64,16 +54,6 @@ module.exports = function (screen) {
     terminal.pty.write('ember version --verbose\r\n');
   });
 
-  screen.key(['i'], function () {
-    installPrompt.input('ember install:', '', function (err, value) {
-      if (err) return;
-      if (value) {
-        terminal.pty.write(`ember install ${value}\r`);
-      } else return;
-    });
-  });
-
-  screen.append(installPrompt);
   taskListWidget.focus();
 
   screen.render();

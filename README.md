@@ -79,6 +79,10 @@ Yes. You can use j,k,gg,G,l and /
 ### How do I select text inside any widget?
 Hold down `Shift` key and use your mouse to select text.
 
+### How do I get focus out of the textbox in ember install page?
+Press `Esc` to get the focus out of the textbox and use hot keys to navigate. If you want to bring back
+focus inside the textbox in the install page, press `Tab` and type your addon name and press `Enter` to install.
+
 ## Known issues
 - Some times while navigating between different pages you might get Max Event Listeners exceeded error 
 - When you have focus in a terminal window, pressing the hot keys like `l,g,d` will take you to the respective pages instead of printing chars in the terminal.
