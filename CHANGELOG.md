@@ -1,3 +1,10 @@
+## [0.7.1](https://github.com/rajasegar/ember-cli-next/compare/v0.7.0...v0.7.1) (2020-08-10)
+
+
+### Bug Fixes
+
+* color contrast for lists ([ca622fe](https://github.com/rajasegar/ember-cli-next/commit/ca622fe481205f9bcf69d77afe752ac8995ae412))
+
 # [0.7.0](https://github.com/rajasegar/ember-cli-next/compare/v0.6.0...v0.7.0) (2020-08-10)
 
 
