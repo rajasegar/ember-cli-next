@@ -1,3 +1,10 @@
+# [0.8.0](https://github.com/rajasegar/ember-cli-next/compare/v0.7.1...v0.8.0) (2020-08-11)
+
+
+### Features
+
+* add install page ([b87ece2](https://github.com/rajasegar/ember-cli-next/commit/b87ece207049fc6ceb553c95b2c9c528231f7f17))
+
 ## [0.7.1](https://github.com/rajasegar/ember-cli-next/compare/v0.7.0...v0.7.1) (2020-08-10)
 
 
