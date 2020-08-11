@@ -15,7 +15,21 @@ module.exports = function (screen) {
     fs.readFileSync(`${root}/package.json`, 'utf-8')
   );
 
-  const leftCol = grid.set(0, 0, 11, 2, blessed.list, {
+  const devDepsList = grid.set(0, 0, 6, 2, blessed.list, {
+    parent: screen,
+    label: 'Dev Dependencies',
+    keys: true,
+    vi: true,
+    style: listStyle,
+  });
+
+  devDepsList.setItems(Object.keys(packageManifest.devDependencies));
+
+  devDepsList.key(['tab'], () => {
+    depsList.focus();
+  });
+
+  const depsList = grid.set(6, 0, 5, 2, blessed.list, {
     parent: screen,
     label: 'Dependencies',
     keys: true,
@@ -23,7 +37,15 @@ module.exports = function (screen) {
     style: listStyle,
   });
 
-  leftCol.setItems(Object.keys(packageManifest.devDependencies));
+  const deps = packageManifest.dependencies
+    ? Object.keys(packageManifest.dependencies)
+    : [];
+
+  depsList.setItems(deps);
+
+  depsList.key(['tab'], () => {
+    text.focus();
+  });
 
   const form = grid.set(0, 2, 2, 10, blessed.form, {
     parent: screen,
@@ -49,6 +71,14 @@ module.exports = function (screen) {
 
   text.on('focus', function () {
     text.readInput();
+  });
+
+  text.on('blur', function () {
+    devDepsList.focus();
+  });
+
+  text.key('tab', () => {
+    devDepsList.focus();
   });
 
   text.on('submit', (data) => {
