@@ -1,3 +1,10 @@
+## [0.8.1](https://github.com/rajasegar/ember-cli-next/compare/v0.8.0...v0.8.1) (2020-08-11)
+
+
+### Bug Fixes
+
+* tab navigation for input box ([771febf](https://github.com/rajasegar/ember-cli-next/commit/771febfdfea1207cee0da041e1e063fe47696d62))
+
 # [0.8.0](https://github.com/rajasegar/ember-cli-next/compare/v0.7.1...v0.8.0) (2020-08-11)
 
 
